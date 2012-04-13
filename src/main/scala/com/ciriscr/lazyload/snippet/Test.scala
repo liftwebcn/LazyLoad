@@ -1,7 +1,8 @@
 package com.ciriscr.lazyload.snippet
 
 import net.liftweb.util.Helpers._
-import net.liftweb.http.S
+import net.liftweb.http.{SHtml, S}
+import net.liftweb.http.js.JsCmds
 
 class Test{
 
@@ -17,7 +18,12 @@ class Test{
       "@element *" #> nextPage.map{ elem =>
         "@number *" #> elem
       }
-    )
+    ) & "button [onclick]" #> SHtml.ajaxInvoke{ () =>
+      this.actual += this.itemsPerLoad
+      //Add the new elements to the page
+      //HELP HERE :D
+      JsCmds.Alert("See the code")
+    }
   } //render
 
 }  //Test 
