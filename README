@@ -1,0 +1,9 @@
+To run:
+
+Execute either sbt.sh or sbt.bat
+
+To startup the application:
+
+container:start
+
+Then, you can access it in http://localhost:8080/
